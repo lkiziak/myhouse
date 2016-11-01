@@ -33,7 +33,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
 
     if @event.save
-      redirect to :events
+      redirect_to events_path
     else
       render :new
     end
@@ -49,7 +49,7 @@ class EventsController < ApplicationController
    @event = Event.find(params[:id])
 
   if @event.update_attributes(event_params)
-    redirect to :events
+    redirect_to events
   else
     render :edit
   end

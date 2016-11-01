@@ -1,58 +1,21 @@
 <h1>My House</h1>
 
 
-<ul>
-    <% @events.each do |event| %>
-        <li>
-            <strong> <%= event.name %> </strong> - <%= event.description %>
-          <%= link_to "Back to events.", event_path(event) %>
-        </li>
-    <% end %>
-</ul>
+<h2> Events </h2>
 
-<p id="notice"><%= notice %></p>
-
+<h2> Groups </h2>
 
 <br>
 
-<h1> Events </h1>
-<% link_to 'See Events', new_event_path %>
 
-<h1> Groups </h1>
-<% link_to 'See Groups', new_group_path %>
-
-<br>
-
+<%= link_to 'Groups Page', groups_path %>
 <%= link_to 'Create Event', new_event_path %>
-<%= link_to 'Create Group', new_group_path %>
 
 
 
 
 
 
-
-
-
-
-<!-- <table>
-
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.title %></td>
-        <td><%= event.description %></td>
-        <td><%= event.location %></td>
-        <td><%= event.contact %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br> -->
 
 
 

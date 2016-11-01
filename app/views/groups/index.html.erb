@@ -2,12 +2,15 @@
 
 <ul>
     <% @groups.each do |group| %>
-        <li>
-            <strong> <%= group.name %> </strong>
-            <%= link_to "Back to groups", group_path(group) %>
-        </li>
+        <ul>
+            <strong> <%= group.group_name %> </strong>
+        </ul>
     <% end %>
 </ul>
+
+
+    <%= link_to 'Events Page', events_path %>
+    <%= link_to 'Create Group', new_group_path %>
 
 
 

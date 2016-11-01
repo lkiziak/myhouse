@@ -1,6 +1,8 @@
-<h1> <%= @group.name %> </h1>
+<h1> <%= @group %> </h1>
 
-<p>This group <%= @group.title %> has a great event at <%= @group.location %>. Contact us <%= @group.group_email %> .</p>
-<%= link_to "Edit group", edit_group_path(@group) %>
-<%= link_to "Back to groups", groups_path %>
-<%= link_to "Delete group", group_path, method: :delete, data: { confirm: "Are you sure you want to delete this group?"} %>
+
+<%= link_to "Edit Group Page", edit_group_path(@group) %>
+<%= link_to "Delete Group", groups_path, method: :delete, data: { confirm: "Are you sure you want to delete this group?"} %>
+<%= link_to "Back to Group Page", groups_path(@group) %>
+
+

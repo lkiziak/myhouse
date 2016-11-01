@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
 
-  belongs_to :group
+  has_many :groups
   has_many :users
 
 

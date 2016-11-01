@@ -8,7 +8,7 @@ class GroupsController < ApplicationController
 #Update - PATCH - corresponds w/submit btn in edit view template
 #Destroy - DELETE - allows users to delete records from databases
 
-  before_action :set_group, only: [:show, :edit, :update, :destroy]
+  #before_action :group, only: [:show, :edit, :update, :destroy]
   before_action :authorize, except: [:index, :show]
 
 
@@ -28,7 +28,7 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     if @group.save
-      redirect_to :group
+      redirect_to groups_path
     else
       render :new
     end
@@ -42,7 +42,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
 
     if @group.update_attributes(group_params)
-      redirect_to :groups
+      redirect_to groups_path
     else
       render :edit
     end
@@ -51,8 +51,7 @@ class GroupsController < ApplicationController
   def destroy
     @group = Group.find(params[:id])
     @group.destroy
-    #redirect_to groups_path
-    redirect_to root_path
+    redirect_to groups_path
   end
 end
 
