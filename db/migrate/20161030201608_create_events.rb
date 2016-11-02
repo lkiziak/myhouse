@@ -7,6 +7,7 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.string :location
       t.string :contact
       t.string :group_id
+      t.string :image
 
       t.timestamps
     end
