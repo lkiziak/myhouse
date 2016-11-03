@@ -1,5 +1,6 @@
-<h1> <%= @event.name %> </h1>
+<h1> <%= @event %> </h1>
 
-<%= link_to "Edit event", edit_event_path(@event) %>
-<%= link_to "Delete this event.", events_path, method: :delete, data: { confirm: "Are you sure you want to delete this event?"} %>
+<%= image_tag @event.image.url(:medium) %>
+
+<%= link_to "Delete Event", events_path, method: :delete, data: { confirm: "Are you sure you want to delete this event?"} %>
 <%= link_to "Back to Events Page", events_path(@event) %>

@@ -4,13 +4,17 @@
     <% @groups.each do |group| %>
         <ul>
             <strong> <%= group.group_name %> </strong>
+            <strong> <%= group.website_url %> </strong>
+            <strong> <%= group.group_email %> </strong>
+            <%= link_to 'Delete Group', groups_path(group.id), method: :delete, data: { confirm: "Are you sure?" } %>
         </ul>
     <% end %>
 </ul>
 
 
-    <%= link_to 'Events Page', events_path %>
+    <%= link_to 'Events Page', events_path %> |
     <%= link_to 'Create Group', new_group_path %>
+
 
 
 

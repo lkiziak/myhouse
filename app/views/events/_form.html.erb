@@ -10,7 +10,6 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
     <%= f.label :title %>
     <%= f.text_field :title %>
@@ -31,8 +30,11 @@
     <%= f.number_field :contact %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+    <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
   </div>
+
+  <div class="actions"><%= f.submit %></div>
 <% end %>
 

@@ -8,18 +8,17 @@ class GroupsController < ApplicationController
 #Update - PATCH - corresponds w/submit btn in edit view template
 #Destroy - DELETE - allows users to delete records from databases
 
-  #before_action :group, only: [:show, :edit, :update, :destroy]
-  before_action :authorize, except: [:index, :show]
-
+#before_action :group, only: [:show, :edit, :update, :destroy]
+before_action :authorize #except: [:index, :show]
 
 
   def index
     @groups = Group.all
   end
 
-  def show
-    @group = Group.find(params[:id])
-  end
+  # def show
+  #   @group = Group.find(params[:id])
+  # end
 
   def new
     @group = Group.new
@@ -34,9 +33,20 @@ class GroupsController < ApplicationController
     end
   end
 
+  # def edit
+  #   @group = Group.find(params[:id])
+  # end
+
   def edit
-    @group = Group.find(params[:id])
+    @user = User.find(params_[:id])
+    if @user.edit_attributes(user_params)
+      flash[:success] = "Event updated"
+      redirect_to root_path
+    else
+      render 'edit'
+    end
   end
+
 
   def update
     @group = Group.find(params[:id])
@@ -48,12 +58,14 @@ class GroupsController < ApplicationController
     end
   end
 
-  def destroy
-    @group = Group.find(params[:id])
-    @group.destroy
-    redirect_to groups_path
-  end
+    def destroy
+      @group = Group.find(params[:id])
+      @group.destroy
+      redirect_to groups_path
+    end
+
 end
+
 
 
 
@@ -61,9 +73,5 @@ private
 def group_params
   params.require(:group).permit(:group_name, :website_url, :group_email)
 end
-
-
-
-
 
 

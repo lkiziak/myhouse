@@ -8,13 +8,15 @@ class EventsController < ApplicationController
 #Update - PATCH - corresponds w/submit btn in edit view template
 #Destroy - DELETE - allows users to delete records from databases
 
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
-  before_action :authorize, except: [:index, :show]
+#before_action :set_event only: [:show, :edit, :update, :destroy]
+before_action :authorize
 
 
 
 #GET - lists all items of given model in database
   def index
+    puts 'mymymyhlhlhkll'
+
     @events = Event.all
   end
 
@@ -41,7 +43,12 @@ class EventsController < ApplicationController
 
 #GET - modifies existing record
   def edit
-    @event = Event.find(params[:id])
+    @event = Event.find(event_params)
+    if @event.save
+      redirect_to events_path
+    else
+      render :new
+    end
   end
 
 #PATCH - corresponds w/submit btn in edit view template
@@ -49,21 +56,22 @@ class EventsController < ApplicationController
    @event = Event.find(params[:id])
 
   if @event.update_attributes(event_params)
-    redirect_to events
+    redirect_to events_path
   else
     render :edit
   end
 end
 
+
 #DELETE - allows users to delete records from databases
+
   def destroy
+    puts 'mymymyhlhlhkll'
     @event = Event.find(params[:id])
     @event.destroy
     redirect_to events_path
   end
 end
-
-
 
 private
 
@@ -72,7 +80,7 @@ def set_event
 end
 
 def event_params
-  params.require(:event).permit(:title, :description, :location, :contact)
+  params.require(:event).permit(:title, :description, :location, :contact, :image)
 end
 
 
