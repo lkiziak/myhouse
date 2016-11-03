@@ -35,7 +35,7 @@ before_action :authorize #except: [:index, :show]
     end
 
   def edit
-    @user = User.find(params_[:id])
+    @user = User.find(params[:id])
     if @user.edit_attributes(user_params)
       flash[:success] = "Event updated"
       redirect_to root_path
@@ -64,6 +64,11 @@ end
 
 
 private
+
+  def set_group
+    @group = Group.find(params[:id])
+  end
+
 def group_params
   params.require(:group).permit(:group_name, :website_url, :group_email)
 end

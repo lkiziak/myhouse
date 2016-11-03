@@ -6,27 +6,29 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= csrf_meta_tags %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+
   </head>
 
   <body>
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <div class="navbar-brand" href="#">My House</div>
     </div>
     <ul class="nav navbar-nav">
-      <li><%= link_to 'Groups Page', groups_path %> </li>
-      <li><%= link_to 'Events Page', events_path %> </li>
-      <!-- <li class="active"><a href="#">Events</a>
-      <!-- <li><a href="#">Page 1</a></li> -->
-      <!-- <li><a href="#">Page 2</a></li>
-      <li><a href="#">Page 3</a></li> -->
-      <% if current_user %>
-      <a>Welcome, <%= current_user.name %></a>
-      <li> <%= link_to 'Log Out', logout_path, method: :delete %></li>
+      <li><%= link_to 'Groups Page', groups_path %><li>
+      <li><%= link_to 'Events Page', events_path %><li>
+      <li><% if current_user %><li>
+      <li class="navbar-right"><a>Welcome, <%= current_user.name %></a></li>
+      <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
       <% else %>
-      <li><%= link_to 'Log In', login_path %></li>
-      <li><%= link_to 'Sign Up', new_user_path %></li>
+      <<%= link_to 'Log In', login_path %>
+      <%= link_to 'Sign Up', new_user_path %>
       <% end %>
     </ul>
   </div>

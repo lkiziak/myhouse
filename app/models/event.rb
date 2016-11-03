@@ -5,6 +5,7 @@ class Event < ApplicationRecord
 
   has_many :users
   has_many :group
+  belongs_to :user
 
   validates :title, presence: true
   validates :description, presence: true

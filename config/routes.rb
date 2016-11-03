@@ -9,9 +9,7 @@ Rails.application.routes.draw do
   root "events#index"
 
   get '/login', to: 'sessions#new'
-  get 'logout', to: 'sessions#destroy'
-
-
+  delete '/logout', to: 'sessions#destroy'
 
 end
 

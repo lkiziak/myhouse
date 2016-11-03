@@ -9,10 +9,8 @@
             <strong> <%= event.description %> </strong>
             <strong> <%= event.location %> </strong>
             <strong> <%= event.contact %> </strong>
+            <%= link_to "More Info", event_path(event) %>
 
-            <%= link_to 'Delete Event', event_path(event), method: :delete, data: { confirm: "Are you sure?" } %>
-            <% if current_user.id == event.user_id %>
-            <% end %>
         </ul>
     <% end %>
 </ul>

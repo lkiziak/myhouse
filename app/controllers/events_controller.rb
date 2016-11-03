@@ -59,7 +59,6 @@ class EventsController < ApplicationController
   end
 
   #DELETE - allows users to delete records from databases
-
   def destroy
       @event = Event.find(params[:id])
       @event.destroy
