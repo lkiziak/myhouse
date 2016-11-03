@@ -5,7 +5,6 @@ class Event < ApplicationRecord
 
   has_many :users
   has_many :group
-  #foreign key?
 
   validates :title, presence: true
   validates :description, presence: true

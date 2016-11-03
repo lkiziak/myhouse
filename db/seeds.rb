@@ -13,10 +13,10 @@ Event.destroy_all
 
 30.times do ||
 
-x = ::Faker::Internet.user_name
-y = ::Faker::Internet.email
-z = ::Faker::Internet.password(8)
-a = ::Faker::Internet.url #website
+x = ::Faker::User.user_name
+y = ::Faker::User.email
+z = ::Faker::User.password(8)
+#a = ::Faker::Internet.url #website
 #b = ::Faker::Lorem.sentence #about
 #c = ::Faker::Avatar.image #img_url
 
@@ -25,21 +25,20 @@ User.create({name: x, email: y, password: z, password_confirmation: z})
 #website: a, about: b, img_url: c
 end
 
-20.times do ||
-    30.times do |i|
+# 20.times do ||
+#     30.times do |i|
 
-    id = User.first.id + i
-    x = Faker::group_name.words(2) #title
-    #y = ::Faker::Number.between(0, 100000) #plays
-    #z = ["music", "stories", "poetry", "gratitude", "wishes", "rants"].sample #category
-    #a = ::Faker::Internet.url #website
-    #b = ::Faker::Lorem.paragraph #about
-    #c = ::Faker::Number.between(0, 300) #length
+#     id = User.first.id + i
+#     x = Faker::group_name.words(2) #title
+#     #y = ::Faker::Number.between(0, 100000) #plays
+#     #a = ::Faker::Internet.url #website
+#     #b = ::Faker::Lorem.paragraph #about
+#     #c = ::Faker::Number.between(0, 300) #length
 
-    Group.create({group_name: id, group_email: y})
+#     Group.create({group_name: id, group_email: y})
 
-    end
-end
+#     end
+# end
 
 
 

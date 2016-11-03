@@ -1,8 +1,8 @@
 <h1>Edit group</h1>
 
-<%= render 'form', group: @group %>
+<%= render 'form' %>
 
 <%= link_to 'Show', @group %> |
 <%= link_to 'Back to groups', groups_path %>
-<%= link_to 'Delete', groups_path %>
+<%= link_to 'Delete', group_path(@group), method: :delete, data: { confirm: "You sure?"} %>
 <%= link_to 'Edit', groups_path %>

@@ -16,9 +16,9 @@ before_action :authorize #except: [:index, :show]
     @groups = Group.all
   end
 
-  # def show
-  #   @group = Group.find(params[:id])
-  # end
+  def show
+    @group = Group.find(params[:id])
+  end
 
   def new
     @group = Group.new
@@ -47,7 +47,6 @@ before_action :authorize #except: [:index, :show]
 
   def update
     @group = Group.find(params[:id])
-
     if @group.update_attributes(group_params)
       redirect_to groups_path
     else
@@ -62,8 +61,6 @@ before_action :authorize #except: [:index, :show]
     end
 
 end
-
-
 
 
 private

@@ -6,31 +6,10 @@ Rails.application.routes.draw do
   resources :events
   resources :sessions, only: [:new, :create, :destroy]
   resources :groups
-  root to: "events#index"
-  root to: "groups#index"
+  root "events#index"
 
   get '/login', to: 'sessions#new'
   get 'logout', to: 'sessions#destroy'
-
-
-
-  # get "events", to: "events#index"
-  # #get "events/:id"  => "events#show", as: :event
-  # #get "events/new" => "events#new", as: :new_event
-  # post "events/", to: "events#create"
-  # #get "events/:id/edit" => "events#edit", as: :edit_event
-  # patch "events/:id", to: "events#update"
-  #delete "events/:id" => "events#destroy", as: :delete
-
-  # get "groups", to: "groups#index"
-  # get "groups/:id" => "groups#show", as: :group
-  # #get "groups/new" => "groups#new", as: :new_group
-  # post "groups/" => "groups#create"
-  # get "groups/:id/edit" => "groups#edit", as: :edit_group
-  # patch "groups/:id" => "groups#update"
-  #delete "groups/:id" => "groups#destroy", as: :delete
-
-
 
 
 
