@@ -24,18 +24,15 @@ before_action :authorize #except: [:index, :show]
     @group = Group.new
   end
 
-  def create
-    @group = Group.new(group_params)
-    if @group.save
-      redirect_to groups_path
-    else
-      render :new
+    def create
+      @group = Group.new(group_params)
+      @group.user_id = current_user.id
+      if @group.save
+        redirect_to groups_path
+      else
+        render :new
+      end
     end
-  end
-
-  # def edit
-  #   @group = Group.find(params[:id])
-  # end
 
   def edit
     @user = User.find(params_[:id])

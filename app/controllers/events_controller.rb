@@ -32,7 +32,6 @@ class EventsController < ApplicationController
   #POST - corresponds w/submit btn in new view template
   def create
     @event = Event.new(event_params)
-
     @event.user_id = current_user.id
     if @event.save
       redirect_to events_path

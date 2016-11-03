@@ -6,7 +6,10 @@
             <strong> <%= group.group_name %> </strong>
             <strong> <%= group.website_url %> </strong>
             <strong> <%= group.group_email %> </strong>
-            <%= link_to 'Delete Group', groups_path(group.id), method: :delete, data: { confirm: "Are you sure?" } %>
+
+            <% if current_user.id == group.user_id %>
+            <%= link_to 'Delete Group', groups_path(group.id), :method => :destroy, data: { confirm: "Are you sure?" } %>
+            <% end %>
         </ul>
     <% end %>
 </ul>
