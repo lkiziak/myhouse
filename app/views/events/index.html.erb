@@ -2,17 +2,19 @@
 
 <h2>Events</h2>
 
-<ul>
     <% @events.each do |event| %>
-        <ul>
-            <strong> <%= event.title %> </strong>
-            <strong> <%= event.description %> </strong>
-            <strong> <%= event.location %> </strong>
-            <strong> <%= event.contact %> </strong>
+    <div class = "container">
+      <div class = "row">
+        <div class = "col-md-6 well">
+            <p> <%= event.title %> </p>
+            <p> <%= event.description %> </p>
+            <p> <%= event.location %> </p>
+            <p> <%= event.contact %> </p>
             <%= link_to "More Info", event_path(event) %>
-        </ul>
+            </div>
+          </div>
+        </div>
     <% end %>
-</ul>
 
 <br>
 

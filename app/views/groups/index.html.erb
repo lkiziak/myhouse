@@ -1,15 +1,27 @@
 <h1>Groups</h1>
 
-<ul>
-    <% @groups.each do |group| %>
-        <ul>
-            <strong> <%= group.group_name %> </strong>
-            <strong> <%= group.website_url %> </strong>
-            <strong> <%= group.group_email %> </strong>
-            <%= link_to "More Info", group_path(group) %>
-        </ul>
+ <% @groups.each do |group| %>
+    <div class = "container">
+      <div class = "row">
+        <div class = "col-md-6 well">
+            <p> <%= group.group_name %> </p>
+            <button class=“btn btn-primary” onClick=“urLink()”>Take me there</button>
+            <p> <%= group.group_email %> </p>
+        </div>
+      </div>
+    </div>
+
+<script>
+
+    function urLink() {
+     window.location.href = "<%= group.website_url %>";
+    }
+</script>
+
+
     <% end %>
-</ul>
+
+
 
 <br>
 
@@ -19,47 +31,3 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <p id="notice"><%= notice %></p>
-
-<table>
-
-  <tbody>
-    <% @groups.each do |group| %>
-      <tr>
-        <td><%= group.group_name %></td>
-        <td><%= group.website_url %></td>
-        <td><%= group.group_email %></td>
-        <td><%= link_to 'Show', group %></td>
-        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
- -->
