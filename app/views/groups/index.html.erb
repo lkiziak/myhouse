@@ -7,10 +7,11 @@
             <strong> <%= group.website_url %> </strong>
             <strong> <%= group.group_email %> </strong>
             <%= link_to "More Info", group_path(group) %>
-
         </ul>
     <% end %>
 </ul>
+
+<br>
 
     <%= link_to 'Events Page', events_path %> |
     <%= link_to 'Create Group', new_group_path %>

@@ -3,6 +3,7 @@ class Group < ApplicationRecord
 
   has_many :users
   has_many :events
+  belongs_to :user
 
 
   validates :group_name, presence: true

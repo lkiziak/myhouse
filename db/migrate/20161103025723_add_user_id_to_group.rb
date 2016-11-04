@@ -3,3 +3,4 @@ class AddUserIdToGroup < ActiveRecord::Migration[5.0]
     add_column :groups, :user_id, :string
   end
 end
+
