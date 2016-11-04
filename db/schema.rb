@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20161103025723) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.index ["user_id"], name: "index_events_on_user_id", using: :btree
   end
 
   create_table "groups", force: :cascade do |t|
@@ -51,4 +52,5 @@ ActiveRecord::Schema.define(version: 20161103025723) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "events", "users"
 end
