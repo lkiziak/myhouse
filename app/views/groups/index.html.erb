@@ -5,18 +5,19 @@
       <div class = "row">
         <div class = "col-md-6 well">
             <p> <%= group.group_name %> </p>
-            <button class=“btn btn-primary” onClick=“urLink()”>Take me there</button>
+            <!-- <button class=“btn btn-primary” onClick=“urLink()”>Take me there</button> -->
+            <p> <%= group.website_url %> </p>
             <p> <%= group.group_email %> </p>
         </div>
       </div>
     </div>
-
+<!--
 <script>
 
     function urLink() {
      window.location.href = "<%= group.website_url %>";
     }
-</script>
+</script> -->
 
 
     <% end %>
