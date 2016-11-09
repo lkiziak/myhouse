@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   resources :groups
   root "events#index"
 
+
   get 'login', to: 'sessions#new'
   delete 'logout', to: 'sessions#destroy'
+
 end
 
 
