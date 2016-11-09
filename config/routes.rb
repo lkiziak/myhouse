@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   #get "users", to: "users#index"
   resources :users, only: [:new, :create]
   resources :events
-  resources :sessions, only: [:new, :create, :destroy]
+  resource :sessions, only: [:new, :create, :destroy]
   resources :groups
   root "events#index"
 
